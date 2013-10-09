@@ -143,6 +143,22 @@
         });
       };
 
+      // List a user's followers
+      // -------
+
+      this.followers = function(username, cb) {
+        var command = username ? "/users/"+username+"/followers" : "/user/followers";
+        _request("GET", command, null, cb);
+      };
+
+      // List who a user is following
+      // -------
+
+      this.following = function(username, cb) {
+        var command = username ? "/users/"+username+"/following" : "/user/following";
+        _request("GET", command, null, cb);
+      };
+
       // Follow user
       // -------
 
